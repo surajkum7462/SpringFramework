@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+        
+         version="5.0">
+
+    <display-name>Archetype Created Web Application</display-name>
+
+    <!-- DispatcherServlet configuration -->
+    <servlet>
+        <servlet-name>spring</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/spring-servlet.xml</param-value> <!-- Adjust to your Spring configuration file -->
+        </init-param>
+        <load-on-startup>1</load-on-startup> <!-- Load the servlet on startup -->
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>spring</servlet-name>
+        <url-pattern>/</url-pattern> <!-- Map all requests to the DispatcherServlet -->
+    </servlet-mapping>
+
+    <!-- Error handling -->
+    <error-page>
+        <exception-type>jakarta.servlet.ServletException</exception-type>
+        <location>/error.jsp</location> <!-- Customize this to point to your error page -->
+    </error-page>
+
+</web-app>
